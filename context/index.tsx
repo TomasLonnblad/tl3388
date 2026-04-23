@@ -1,5 +1,5 @@
 import { ThemeProvider } from "next-themes";
-import { Settings } from "@/basehub";
+
 
 export function Providers({
   children,
