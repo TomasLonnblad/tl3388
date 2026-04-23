@@ -598,18 +598,7 @@ export interface Query {
     untitled: Untitled
     waitlist: Waitlist
     __typename: 'Query'
-}
 
-export interface RepoSys {
-    dashboardUrl: Scalars['String']
-    forkUrl: Scalars['String']
-    hash: Scalars['String']
-    id: Scalars['ID']
-    playgroundInfo: (_PlaygroundInfo | null)
-    slug: Scalars['String']
-    title: Scalars['String']
-    __typename: 'RepoSys'
-}
 
 export type RichTextJson = (BaseRichTextJson | BodyRichText | ContentRichText | Content_1RichText | CopyrightRichText | SubtitleRichText) & { __isUnion?: true }
 
@@ -733,15 +722,6 @@ export interface Waitlist {
     subtitle: (Subtitle | null)
     title: (Scalars['String'] | null)
     __typename: 'Waitlist'
-}
-
-export interface _PlaygroundInfo {
-    claimUrl: (Scalars['String'] | null)
-    editUrl: Scalars['String']
-    expiresAt: (Scalars['String'] | null)
-    id: (Scalars['String'] | null)
-    __typename: '_PlaygroundInfo'
-}
 
 export type _ResolveTargetsWithEnum = 'id' | 'objectName'
 
@@ -1678,16 +1658,6 @@ export interface QueryGenqlSelection{
     __typename?: boolean | number
 }
 
-export interface RepoSysGenqlSelection{
-    dashboardUrl?: boolean | number
-    forkUrl?: boolean | number
-    hash?: boolean | number
-    id?: boolean | number
-    playgroundInfo?: _PlaygroundInfoGenqlSelection
-    slug?: boolean | number
-    title?: boolean | number
-    __typename?: boolean | number
-}
 
 export interface RichTextJsonGenqlSelection{
     content?: boolean | number
@@ -1873,13 +1843,6 @@ export interface WaitlistGenqlSelection{
     __typename?: boolean | number
 }
 
-export interface _PlaygroundInfoGenqlSelection{
-    claimUrl?: boolean | number
-    editUrl?: boolean | number
-    expiresAt?: boolean | number
-    id?: boolean | number
-    __typename?: boolean | number
-}
 
 export interface _componentsGenqlSelection{
     author?: (authorComponent_AsListGenqlSelection & { __args?: {
@@ -2271,11 +2234,7 @@ export interface FragmentsMap {
   Waitlist: {
     root: Waitlist,
     selection: WaitlistGenqlSelection,
-}
-  _PlaygroundInfo: {
-    root: _PlaygroundInfo,
-    selection: _PlaygroundInfoGenqlSelection,
-}
+
   _components: {
     root: _components,
     selection: _componentsGenqlSelection,

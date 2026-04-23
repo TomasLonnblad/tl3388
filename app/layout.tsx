@@ -6,7 +6,7 @@ import { Header } from "@/components/header";
 import { Toolbar } from "basehub/next-toolbar";
 import { basehub } from "basehub";
 import { MeshGradientComponent } from "@/components/mesh-gradient";
-import { PlaygroundSetupModal } from "@/components/playground-notification";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -69,7 +69,7 @@ export default async function RootLayout({
     },
   });
 
-  let playgroundNotification = null;
+
 
   subscribeEnv({
     name: "BASEHUB_TOKEN",
@@ -82,26 +82,8 @@ export default async function RootLayout({
     value: process.env.RESEND_API_KEY,
   });
 
-  if (!isMainV0 && !allValid && process.env.NODE_ENV !== "production") {
-    const playgroundData = await basehub().query({
-      _sys: {
-        playgroundInfo: {
-          expiresAt: true,
-          editUrl: true,
-          claimUrl: true,
-        },
-      },
-    });
 
-    if (playgroundData._sys.playgroundInfo) {
-      playgroundNotification = (
-        <PlaygroundSetupModal
-          playgroundInfo={playgroundData._sys.playgroundInfo}
-          envs={envs}
-        />
-      );
-    }
-  }
+ 
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -137,7 +119,7 @@ export default async function RootLayout({
           </div>
         </Providers>
         {!isMainV0 && <Toolbar />}
-        {playgroundNotification}
+   
       </body>
     </html>
   );
