@@ -4,7 +4,7 @@ import { Geist } from "next/font/google";
 import { Providers } from "@/context";
 import { Header } from "@/components/header";
 import { Toolbar } from "basehub/next-toolbar";
-import { basehub } from "basehub";
+
 import { MeshGradientComponent } from "@/components/mesh-gradient";
 
 import "./globals.css";
@@ -55,20 +55,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { settings } = await basehub().query({
-    settings: {
-      defaultTheme: true,
-      forcedTheme: true,
-      background: {
-        color1: { hex: true },
-        color2: { hex: true },
-        color3: { hex: true },
-        color4: { hex: true },
-        speed: true,
-      },
-    },
-  });
-
 
 
   subscribeEnv({
@@ -91,17 +77,13 @@ export default async function RootLayout({
         className={`${geistSans.className} antialiased max-w-screen min-h-svh bg-slate-1 text-slate-12`}
       >
         <Providers
-          defaultTheme={settings.defaultTheme || "system"}
-          forcedTheme={settings.forcedTheme}
+    
         >
           <MeshGradientComponent
             colors={[
-              settings.background.color1.hex,
-              settings.background.color2.hex,
-              settings.background.color3.hex,
-              settings.background.color4.hex,
+           
             ]}
-            speed={settings.background.speed}
+         
             style={{
               position: "fixed",
               top: 0,

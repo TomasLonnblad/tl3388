@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { PropsWithChildren } from "react";
 import { ThemeSwitcher } from "../switch-theme";
 import { RichText } from "basehub/react-rich-text";
-import { DarkLightImage, darkLightImageFragment } from "../dark-light-image";
+
 
 export async function WaitlistWrapper({ children }: PropsWithChildren) {
   const [
