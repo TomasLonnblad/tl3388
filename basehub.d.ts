@@ -600,7 +600,6 @@ export interface Query {
     __typename: 'Query'
 
 
-export type RichTextJson = (BaseRichTextJson | BodyRichText | ContentRichText | Content_1RichText | CopyrightRichText | SubtitleRichText) & { __isUnion?: true }
 
 export interface Settings {
     _analyticsKey: Scalars['String']
@@ -723,7 +722,7 @@ export interface Waitlist {
     title: (Scalars['String'] | null)
     __typename: 'Waitlist'
 
-export type _ResolveTargetsWithEnum = 'id' | 'objectName'
+
 
 export type _StructureFormatEnum = 'json' | 'xml'
 
